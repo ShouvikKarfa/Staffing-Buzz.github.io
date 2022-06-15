@@ -71,7 +71,9 @@ body{
     .navigation-items{
         display: none !important;
     }
-    
+    .navigation-items-menu{
+        display: block !important;
+    }
   }
 
 header{
@@ -92,6 +94,7 @@ header{
     background-size: 100%; */
     -webkit-background-clip: text;
     -moz-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
     /* color: #ffc107; */
@@ -100,6 +103,17 @@ header{
     text-decoration: none !important;
     font-size: xx-large;
 }
+.mob-nav-items a{
+    position: relative;
+    color:black;
+    font: size 1.5em;
+    font-weight:700;
+    text-decoration: none;
+    font-size: x-large;
+    transition: 0.3s ease;
+    margin:0px 10px 0px 10px; 
+}
+
 
 
 .navigation-items a{
@@ -143,6 +157,7 @@ header{
    background-size: 100%;
    -webkit-background-clip:text;
    -moz-background-clip: text;
+   background-clip: text;
    -webkit-text-fill-color:transparent;;
    -moz-text-fill-color:transparent;
    font:size 1.5em;
@@ -161,7 +176,7 @@ header{
     
 }
 
-.card{
+.card1{
     margin: 20px;
     box-shadow:
     0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -169,67 +184,31 @@ header{
     0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072),
     0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12)
-  ;
-  
-    
-    
+    0 100px 80px rgba(0, 0, 0, 0.12)  ;
     min-height: 200px;
     width: 50vw;
     margin: 100px auto;
     background: white;
     border-radius: 5px;
+    transition: border-width 1s linear;
+    border:0px solid red;
 }
+
+.card1:hover{
+    border:1px solid red;
+    border-width: 6px;
+}
+
+
 .card-img-top{
     transition: transform .5s ease;
 }
 
-.card-img-top:hover{
+.image-hover:hover{
     transform: scale(1.2);
+    overflow: hidden !important;
 }
 
-.contact-us-container{
-background-color: #f2e6f2;
-}
-
-
-.why-us-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-.why-us-container img{
-    min-width: 450px;
-   }
-   .why-us-container div{
-    min-width: 499px;
-   }
-@media screen and (max-width: 1001px) {
-    .why-us-container{
-        flex-wrap: wrap;
-    }
-    .why-us-container img{
-        width: 100vw !important;
-        overflow: hidden;
-       }
-       .why-us-container div{
-        width: 100vw !important;
-        height: 60vh;
-       }
-  }
-
-.about-us-pic{
-   height: 30vh;
-   width: 100vw;
-    background-image: url(assets/mitch-rosen-188054-2000x1125.jpg);
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
-
-  
   #load{
     width:100%;
     height:100%;
@@ -240,76 +219,41 @@ background-color: #f2e6f2;
     align-items: center;
 }
 
+@media screen and (max-width: 550px) {
+     
+.brand{
+    font-size: x-large;
+}
 
-.about-us-1 h1{
-    padding-left: 15vh;
-    padding-right: 15vh;
-    padding-top: 10vh;
+header {
+    padding: 11px 47px !important;
+}
+#brand-img{
+    height:39px;
+}
+
+.slider-quote-heading {
+    font-weight: 600;
+    font-size: 250%;
+}
+
+.slider-Images p {
+    font-size: 100%;
+}
+
+.about-us {
+    font-size: 50px;
+}
+
+  }
+
+.card-why-us{
+    font-weight: bold;
+    margin: 15px;
+    border-radius: 5.25rem !important;
+    backdrop-filter: blur(10px);
     
-
 }
-.about-us-1 h3{
-    padding-left: 15vh;
-    padding-right: 15vh;
-    padding-top: 5vh;
-    padding-bottom: 2vh;
-}
-.about-us-1 button{
-    padding-left: 5vh;
-    padding-right: 5vh;
-    margin-bottom: 25vh;
-}
-#circle {
-    width: 50vh;
-    height: 50vh;
-    -webkit-border-radius: 25vh;
-    -moz-border-radius: 25vh;
-    border-radius: 25vh;
-    background: blue;
- }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -325,7 +269,6 @@ section {
   width: 100%;
   display: inline-block;
   background: #333;
-  height: 50vh;
   text-align: center;
   font-size: 22px;
   font-weight: 700;
@@ -333,7 +276,7 @@ section {
 }
 
 .footer-distributed{
-	background: #666;
+	background: rgb(102, 102, 102);
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -476,8 +419,8 @@ section {
 
 .footer-distributed .footer-icons a{
 	display: inline-block;
-	width: 35px;
-	height: 35px;
+	width: 40px;
+	height: 40px;
 	cursor: pointer;
 	background-color:  #33383b;
 	border-radius: 2px;
@@ -512,4 +455,233 @@ section {
 		margin-left: 0;
 	}
 
+}
+ .clients-connect h4 i{
+display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+
+}
+
+
+
+/* Get quote */
+.btn-dark {
+    color: #fff;
+    background-color: #1F1F2E;
+    border-color: #1F1F2E;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.border-0 {
+    border: 0 !important;
+}
+.pt-3, .py-3 {
+    padding-top: 1rem !important;
+}
+
+.pb-3, .py-3 {
+    padding-bottom: 1rem !important;
+}
+
+.form-ele{
+    padding:7px;
+    
+}
+.form-ele input{
+    height: 47px;
+}
+
+
+
+.team img {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .team .team-text {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    bottom: 0px;
+    left: 0;
+    border-bottom: 5px solid red;
+    transition: .5s;
+  }
+  
+  .team:hover .team-text {
+    bottom: 100px;
+  }
+  
+  .team .team-social {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    bottom: -100px;
+    left: 0;
+    transition: .5s;
+  }
+  
+  .team:hover .team-social {
+    bottom: 0;
+  }
+
+  .btn-social {
+    width: 36px;
+    height: 36px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: center !important;
+    border-radius: 36px !important;
+}
+.mr-2, .mx-2 {
+    margin-right: 0.5rem !important;
+}
+.team-social{
+    background-color: red !important;
+}
+
+
+.check-box-cus{
+background-color: red;
+width: 35px;
+height: 35px;
+padding: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* clients */
+body {
+    background-color:#eee;
+  }
+  .section-title h1 {
+      text-align: center;
+      padding-bottom: 6px;
+      letter-spacing: 0.3px;
+      padding: 0;
+  }
+  .section-title::after {
+      content: "";
+      height: 3px;
+      background: #fbb900;
+      width: 80px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+  }
+  /****************/
+  /*	 BX-SLIDER 	*/
+  /****************/
+  section.client {
+      padding:2em 0em;
+      background-color: #eee;
+  
+  }
+  section.client .section-title {
+      margin-bottom: 6em;
+  }
+  .bx-controls {
+      position: relative;
+  }
+  .bx-wrapper .bx-pager {
+      text-align: center;
+      padding-top: 30px;
+  }
+  .bx-wrapper .bx-pager .bx-pager-item, .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+      display: inline-block;
+      *zoom: 1;
+      *display: inline;
+  }
+  .bx-wrapper .bx-pager.bx-default-pager a {
+      background: #666;
+      text-indent: -9999px;
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin: 0 5px;
+      outline: 0;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+  }
+  
+  .cl-item{
+    width: 200px;
+    height: 150px;
+
+  }
+
+  @media screen and (max-width: 550px) {
+    .cl-item{
+        width: 150px;
+        height: 100px;
+    
+      }
+}
+
+
+
+/* faq */
+.faq-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    width:100vw;
+
+}
+
+.accordion-item{
+    border: none !important;
+    background-color:#6fdcd8 !important;
+}
+/* .accordion-button{
+    color: #ca0630;
+    
+} */
+.accordion{
+    max-width: 550px !important;
+    padding: 0px !important;
+}
+
+.faq-iteam{
+    margin-left:3vw;
+    margin-right:3vw;
+    margin-bottom:5vh;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #fdfdfd !important;
+    background-color: #cd3132 !important;
 }

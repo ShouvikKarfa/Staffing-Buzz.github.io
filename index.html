@@ -3,25 +3,33 @@
 
 <head>
   <title>Stuffing Buzz</title>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/final-logo-only-1.ico" />
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- JavaScript Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
 </head>
 
-<div id="load" style="display:flex;align-items: center;justify-content: space-around;">
-  <!-- <div class="spinner-border text-primary" style="display: 50%; height: ;" role="status">
+<body>
+  <div id="load" style="display:flex;align-items: center;justify-content: space-around;">
+    <!-- <div class="spinner-border text-primary" style="display: 50%; height: ;" role="status">
   <span class="visually-hidden">Loading...</span>
 </div> -->
-  <img src="assets/R.gif" alt="">
-</div>
+    <img src="assets/R.gif" alt="">
+  </div>
 
-<body>
   <!-- loader -->
 
 
@@ -33,184 +41,518 @@
     <h1 hrefg="#" id="brand" class="brand"><img id="brand-img" src="assets/final-logo-only-1.png" style="display:none"
         height="70px" padding="2px"> Staffing Buzz</h1>
     <div class="navigation">
-      <div class="navigation-items">
-        <a href="#" id="xy" class="titles">Home</a>
-        <a href="#" id="xy1" class="titles">Services</a>
-        <a href="#" id="xy2" class="titles">Career</a>
-        <a href="#" id="xy3" class="titles">About</a>
-        <a href="#" id="xy4" class="titles">Contact Us</a>
+      <nav class="navigation-items" id="navbar-example2">
+        <a href="#" id="xy" class="titles xy">Home</a>
+        <a onclick="scroll_to('scrollServices')" id="xy1" class="titles xy1">Services</a>
+        <a href="#scrollContactUs" id="xy2" class="titles xy2">Career</a>
+        <a onclick="scroll_to('scrollAbout')" id="xy3" class="titles xy3">About</a>
+        <a id="xy4" class="titles xy4" onclick="scroll_to('scrollContactUs')">Contact Us</a>
+      </nav>
+
+      <!-- Mobile navifation -->
+      <div class="navigation-items-menu" style="display:none;">
+        <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+          style="padding:0% !important;color:#c79b24;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" id="mob-nav" fill="#c79b24" class="bi bi-list"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+          </svg>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body mob-nav-items" data-bs-dismiss="offcanvas" aria-label="Close">
+            <a href="#" class="titles">Home</a><br>
+            <a onclick="scroll_to('scrollServices')" class="titles">Services</a><br>
+            <a href="#scrollContactUs" class="titles">Career</a><br>
+            <a onclick="scroll_to('scrollAbout')" class="titles">About</a><br>
+            <a onclick="scroll_to('scrollContactUs')" class="titles">Contact Us</a><br>
+          </div>
+        </div>
       </div>
+
     </div>
   </header>
 
-
-  <!-- Slider -->
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-        aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-        aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active slider-Images">
-        <img src="assets/sunset-1807524.jpg" class="slider-Images crp-img1" style="overflow: hidden;" alt="...">
-        <h1 class="slider-quote-heading">Quote 1</h1>
-        <p>Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends
-          on our Collapse JavaScript plugin.<br>
-          <button type="button" class="btn btn-warning">Know more
-        </p>
+  <!-- main body -->
+  <div>
+    <!-- Slider -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" id="home">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
       </div>
-      <div class="carousel-item slider-Images">
-        <img src="assets/tree-736885.jpg" class="slider-Images crp-img2" alt="...">
-        <h1 class="slider-quote-heading">Quote 1</h1>
-        <p>Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends
-          on our Collapse JavaScript plugin.<br>
-          <button type="button" class="btn btn-outline-warning">Contact us</button>
-        </p>
+      <div class="carousel-inner">
+        <div class="carousel-item active slider-Images">
+          <img src="assets/sunset-1807524.jpg" class="slider-Images crp-img1" style="overflow: hidden;" alt="...">
+          <h1 class="slider-quote-heading">Values</h1>
+          <p>"Integrity and Honesty. Our focus is on performance, improvement by placing the right candidates at the
+            right place at the right time & to be a value added partner for our clients"<br>
+            <button type="button" class="btn btn-warning">Know more
+          </p>
+        </div>
+        <div class="carousel-item slider-Images">
+          <img src="assets/tree-736885.jpg" class="slider-Images crp-img2" alt="...">
+          <h1 class="slider-quote-heading">Our Mission</h1>
+          <p>"To achieve excellence in business and exceed expectations of our customers,
+            stakeholders & employees"<br>
+            <button type="button" class="btn btn-outline-warning">Contact us</button>
+          </p>
+        </div>
+        <div class="carousel-item slider-Images">
+          <img src="assets/eyes-5248678 (1).jpg" class="slider-Images crp-img3" alt="...">
+          <h1 class="slider-quote-heading">Vision</h1>
+          <p>"To be a leader in Staffing for Small, Medium & Large organizations"<br>
+            <button type="button" class="btn btn-warning">Know more
+          </p>
+        </div>
       </div>
-      <div class="carousel-item slider-Images">
-        <img src="assets/eyes-5248678 (1).jpg" class="slider-Images crp-img3" alt="...">
-        <h1 class="slider-quote-heading">Quote 1</h1>
-        <p>Navbars are responsive by default, but you can easily modify them to change that. Responsive behavior depends
-          on our Collapse JavaScript plugin.<br>
-          <button type="button" class="btn btn-warning">Know more
-        </p>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-      data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-
-
-
-  <!-- Services  -->
-
-  <div class="container" style="height: fit-content;background-color: rgb(241, 241, 241);">
-    <div style="justify-content: center;align-items: center; display: flex; flex-direction: column;">
-      <h1 class="about-us" id="about-us">Services</h1>
-      <div style="width: 100px; height: 3px; background-color: red; margin-right: 175px"></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
 
 
-    <div class="service-cards-container">
-      <div class="card" style="width: 18rem;">
-        <img src="assets/img1.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <!-- About us -->
+    <div class="container-fluid py-5" style="background-color: white;" id="scrollAbout">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5 pb-4 pb-lg-0" data-aos="fade-in"  data-aos-delay="0.5">
+            <img class="img-fluid w-100" src="https://source.unsplash.com/520x350/?office" alt="">
+
+          </div>
+          <div class="col-lg-7" data-aos="fade-in"  data-aos-delay="0.1">
+            <h6 class="text-primary text-uppercase fw-bold" style="color: red!important;">About Us</h6>
+            <h1 class="mb-4 fw-bold" style="color:#0d9089;letter-spacing:2px;">Trusted & Fastest Growing Staff Providers
+            </h1>
+            <p class="mb-4">We are trust and the fastest growing Human Resource firm providing HR solutions to firms.
+              Our team excels in HR Recruitment and training which makes it easy
+              to recruit candidate with suitable skills for the company. We are here to deliver all of your HR
+              solutions.</p>
+            <p>Since Inception our goal has been to live up to the word "Trusted" and become one of the most
+              "Trusted" in the industry.</p>
+            <div class="d-flex align-items-center pt-2">
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+    <!-- About us End -->
 
-      <div class="card" style="width: 18rem;">
-        <img src="assets/img2.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+
+    <!-- Get Quote -->
+    <div class="container-fluid  my-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7 py-5 py-lg-0" data-aos="fade-in"  data-aos-delay="0.1">
+            <h6 class="text-primary text-uppercase fw-bold" style="color: red!important;">Get A Quote</h6>
+            <h1 class="mb-4 fw-bold" style="color: #0d9089;">Request A Free Quote</h1>
+            <p class="mb-4">We respect our client's ambition and we only aim to provide the best of what we do, and help
+              them in their path towards the Top.</p>
+            <p>Feel free to leave us a message us by filling the form. We will be right back in no time. </p>
+            <div class="row">
+              <div class="col-sm-4" data-aos="fade-up"  data-aos-delay="0.1">
+                <h1 class="text-primary mb-2 fw-bold" data-toggle="counter-up" style="color: red!important;">2000+</h1>
+                <h6 class="fw-bold mb-4">SKilled Experts</h6>
+              </div>
+              <div class="col-sm-4" data-aos="fade-up"  data-aos-delay="0.2">
+                <h1 class="text-primary mb-2 fw-bold" data-toggle="counter-up" style="color: red!important;">12</h1>
+                <h6 class="fw-bold mb-4">Happy Clients</h6>
+              </div>
+              <div class="col-sm-4" data-aos="fade-up"  data-aos-delay="0.3">
+                <h1 class="text-primary mb-2 fw-bold" data-toggle="counter-up" style="color: red!important;">12</h1>
+                <h6 class="fw-bold mb-4">Successfully Delivered</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5" data-aos="fade-in"  data-aos-delay="0.5">
+            <div class="bg-primary py-5 px-4 px-sm-5" style="background-color: #46b4af!important;">
+              <form class="py-5">
+                <div class="form-group form-ele" data-aos="fade-in"  data-aos-delay="0.1">
+                  <input type="text" class="form-control border-0 p-4" placeholder="Your Name" required="required" />
+                </div>
+                <div class="form-group form-ele" data-aos="fade-in"  data-aos-delay="0.2">
+                  <input type="email" class="form-control border-0 p-4" placeholder="Your Email" required="required" />
+                </div>
+                <div class="form-group form-ele" style="display: grid;" data-aos="fade-in"  data-aos-delay="0.3">
+                  <select class="custom-select border-0 px-4" style="height: 47px;">
+                    <option selected>Select A Service</option>
+                    <option value="1">Contract Staffing</option>
+                    <option value="2">Permanent Staffing</option>
+                    <option value="3">Payroll Services</option>
+                    <option value="4">Recruitment Service</option>
+                    <option value="5">Others</option>
+                  </select>
+                </div>
+                <div class="form-ele" data-aos="fade-in"  data-aos-delay="0.3">
+                  <button class="btn btn-dark btn-block border-0 py-3" type="submit">Get A Quote</button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+    <!-- Quote  End-->
 
-      <div class="card" style="width: 18rem;">
-        <img src="assets/img3.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <!-- Services  -->
+    <div style="background-color: white;padding-top: 10px;">
+      <div class="container" style="height: fit-content;" id="scrollServices">
+        <div style="justify-content: center;align-items: center; display: flex; flex-direction: column;">
+          <h1 class="about-us" id="about-us">Services</h1>
+          <div style="width: 100px; height: 3px; background-color: red; margin-right: 175px"></div>
+        </div>
+
+        <div class="service-cards-container">
+          <div class="card card1" style="width: 18rem;" data-aos="fade-up" data-aos-delay="0.1">
+            <img src="assets/img1.jpg" class="card-img-top image-hover" alt="...">
+            <div class="card-body" style="border-bottom: 5px solid red;border: radius 2px;">
+              <h5 class="card-title">Contract Staffing</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">learn
+                More</a>
+            </div>
+          </div>
+
+          <div class="card card1" style="width: 18rem;" data-aos="fade-up" data-aos-delay="0.2">
+            <img src="assets/img2.jpg" class="card-img-top image-hover" alt="...">
+            <div class="card-body" style="border-bottom: 5px solid red;border: radius 2px;">
+              <h5 class="card-title">Permanent Staffing</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">learn
+                More</a>
+            </div>
+          </div>
+
+          <div class="card card1" style="width: 18rem;" data-aos="fade-up" data-aos-delay="0.3">
+            <img src="assets/img3.jpg" class="card-img-top image-hover" alt="...">
+            <div class="card-body" style="border-bottom: 5px solid red;border: radius 2px;">
+              <h5 class="card-title">Payroll Services</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Learn
+                More</a>
+            </div>
+          </div>
+
+          <div class="card card1" style="width: 18rem;" data-aos="fade-up" data-aos-delay="0.4">
+            <img src="assets/img9.jpg" class="card-img-top image-hover" alt="...">
+            <div class="card-body" style="border-bottom: 5px solid red;border: radius 2px;">
+              <h5 class="card-title">Recruitment Service</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">learn
+                More</a>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Popup -->
+        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+          aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenteredScrollableTitle">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>This is some placeholder content to show a vertically centered modal. We've added some extra copy
+                  here
+                  to
+                  show how vertically centering the modal works when combined with scrollable modals. We also use some
+                  repeated line breaks to quickly extend the height of the content, thereby triggering the scrolling.
+                  When
+                  content becomes longer than the prefedined max-height of modal, content will be cropped and scrollable
+                  within the modal.</p>
+                <br><br><br><br><br><br><br><br><br><br>
+                <p>Just like that.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <!-- Services End  -->
+
+
+    <!-- Why us ? -->
+    <div class="container-fluid  my-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5">
+            <img class="img-fluid w-100" src="assets/Why-us.jpg" alt="">
+          </div>
+          <div class="col-lg-7 py-5 py-lg-0">
+            <h6 class="text-uppercase fw-bold" style="color:red;">Why Choose Us</h6>
+            <h1 class="mb-4 fw-bold" style="color:#0d9089;">Faster, Safe and Trusted Employee Services Provider</h1>
+            <p class="mb-4" style="padding-left:2%;">Our team is passionate about opportunities to innovate and find amazing ways to solve complex business challenges<br><br>
+            We combine 15+ years of experience and our understanding of market and user behaviour to meet our clients' business goals.<br><br>
+            Our customers choose us because we provide leading technology, deliver unmatched services and training, and offer some of the best value in the industry.<br>
+            </p>
+            <ul class="list-inline">
+              <li>
+                <h6><i class="bi bi-check-circle-fill text-danger mr-3"></i> Best In Industry</h6>
+              <li>
+                <h6><i class="bi bi-check-circle-fill text-danger mr-3"></i> Emergency Services</h6>
+              </li>
+              <li>
+                <h6><i class="bi bi-check-circle-fill text-danger mr-3"></i> 24/7 Customer Support</h6>
+              </li>
+            </ul>
+            <a href="" class="btn btn-outline-danger mt-3 py-2 px-4">Learn More</a>
+          </div>
         </div>
       </div>
+    </div>
+    <!-- Why us End -->
 
-      <div class="card" style="width: 18rem;">
-        <img src="assets/img9.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+    <!-- Meet our team us  -->
+    <div class="container-fluid pt-5" style="background-color: white;">
+      <div class="container">
+        <div class="text-center pb-2">
+          <h6 class=" text-uppercase fw-bold" style="color:red;">Delivery Team</h6>
+          <h1 class="mb-4" style="color: #0d9089;">Meet Our Delivery Team</h1>
+        </div>
+        <div class="" style="display:flex;flex-direction: row;justify-content: space-around; flex-wrap: wrap;">
+          <div class="col-lg-3 col-md-6" style="min-width: 345px;margin: left 10px;" data-aos="fade-up">
+            <div class="team card position-relative overflow-hidden border-0 mb-5">
+              <img class="card-img-top" src="assets/director2.jpg" alt="">
+              <div class="card-body text-center p-0">
+                <div class="team-text d-flex flex-column justify-content-center" style="background-color: whitesmoke">
+                  <h5 class="fw-bold">Joy Das</h5>
+                  <span>Co founder & Director</span>
+                </div>
+                <div class="team-social d-flex align-items-center justify-content-center">
+                  <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fa fa-twitter"></i></a>
+                  <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fa fa-facebook"></i></a>
+                  <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fa fa-linkedin"></i></a>
+                  <a class="btn btn-outline-dark btn-social" href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6" style="min-width: 345px;margin: left 10px;" data-aos="fade-up">
+            <div class="team card position-relative overflow-hidden border-0 mb-5">
+              <img class="card-img-top" src="assets/director1 (3).jpg" alt="">
+              <div class="card-body text-center p-0">
+                <div class="team-text d-flex flex-column justify-content-center" style="background-color: whitesmoke">
+                  <h5 class="fw-bold">Sujay Dutta</h5>
+                  <span>Co founder & Director</span>
+                </div>
+                <div class="team-social d-flex align-items-center justify-content-center">
+                  <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fa fa-twitter"></i></a>
+                  <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fa fa-facebook"></i></a>
+                  <a class="btn btn-outline-dark btn-social mr-2" href="#"><i class="fa fa-linkedin"></i></a>
+                  <a class="btn btn-outline-dark btn-social" href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
 
-      <div class="card" style="width: 18rem;">
-        <img src="assets/img5.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <!-- Faq -->
+    <div class="faq-container" id="scrollfaq" style="max-width:95vw !important;">
+
+
+      <!--First column  -->
+      <div class="faq-iteam" data-aos="fade-up"  data-aos-delay="0.1">
+        <h6 class="text-uppercase fw-bold" style="color:red;">Faq for Clients </h6>
+        <h1 class="mb-4 fw-bold" style="color:#0d9089;">Things to <br>know before starting</h1>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne1" aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne1">
+                How can you connect us ?
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne1" class="accordion-collapse collapse show"
+              aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                You can use the phone number to reach our team or mail directly to us at
+                <strong>staffingbuzz@gmail.com</strong>.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo1" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo1">
+                Are we all compliances ?
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo1" class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body">
+                <strong>Yes</strong>, we follow all the compliances. Monthly , Quarterly and yearly audit is done by our
+                Internal Audit Team
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree1" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree1">
+                Where are our Offices located?
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree1" class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingThree">
+              <div class="accordion-body">
+                We have our Main office in Kolkata and some other locations are Katok and many active locations for job.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <!--Second Column  -->
+      <div class="faq-iteam" data-aos="fade-in"  data-aos-delay="0.5">
+        <h6 class="text-uppercase fw-bold" style="color:red;">Faq for Candidates </h6>
+        <h1 class="mb-4 fw-bold" style="color:#0d9089;">Things to <br>know before starting</h1>
 
-      <div class="card" style="width: 18rem;">
-        <img src="assets/img6.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img src="assets/img8.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem;">
-        <img src="assets/img4.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                aria-controls="panelsStayOpen-collapseOne">
+                Are you a candidate? Get in touch with our recruitment team.
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+              aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                Candidates can contact our team on the given Helpline number or can directly share their resume to our
+                E-mail as well.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo">
+                How to get a Job?
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body">
+                Our job section shows openings. Contact our recruitment team based on the vacancy that suits your
+                profile . Our team will set-up an interview.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree">
+                Is there any Charge/Fee we need to pay??
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingThree">
+              <div class="accordion-body">
+                No, we do not charge any money from the candidates applying for any position.If you are asked for any
+                fee then file a complaint on our helpline.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
-  </div>
-  <!-- Why us ? -->
-  <div style="margin:0; position: relative;left: 0px;">
-    <div class="why-us-container">
-      <img src="assets/pexels-pixabay-37836.jpg" style="width:50vw;height: auto;" class="" alt="...">
-      <div class="why-us-div" style="background-color: black;width: 50vw;">
-        <h1
-          style="color: #EE3D85;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding: 0px 10px 0px 20px;;">
-          Why Us ? </h1>
-        <p
-          style="color: #EE3D85;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding: 0px 10px 0px 20px;;">
-          &#9642; We listen to the other person without interruption and practice effective listening skills.</p>
-        <p
-          style="color: #EE3D85;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding: 0px 10px 0px 20px;;">
-          &#9642; We do not shy away from challenges</p>
-        <p
-          style="color: #EE3D85;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;padding: 0px 10px 0px 20px;;">
-          &#9642; We stay true to our slogan</p>
+    <!-- Faq end -->
+
+
+    <!-- Features Start -->
+    <div style="background-color: white; padding-bottom:5%;">
+      <div class="container-xxl py-6" style="margin-top:5%;margin-bottom: 5%;">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0.1">
+              <h6 class="text-uppercase mb-2 fw-bold" style="color: red;">Why our team!</h6>
+              <h1 class="display-6 mb-4 fw-bold" style="color:#0d9089;">Most Emerging HR Mangement & Staffing Service Company In Your city</h1>
+              <p class="mb-5">We work according to the client requirements and our team puts in all of their efforts to
+                fullfill the same. Our team is highly experienced, in hiring and managing resources and training and in
+                providing the industry, experienced candidates.</p>
+              <div class="row gy-5 gx-4">
+                <div class="col-sm-6" data-aos="fade-in" data-aos-delay="0.1">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="flex-shrink-0 btn-square me-3 check-box-cus">
+                      <i class="fa fa-check text-white"></i>
+                    </div>
+                    <h5 class="mb-0">Fully Licensed</h5>
+                  </div>
+                  <span>Are we following 100% Compliances</span>
+                </div>
+                <div class="col-sm-6 " data-aos="fade-in" data-aos-delay="0.2">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="flex-shrink-0 btn-square check-box-cus me-3">
+                      <i class="fa fa-check text-white"></i>
+                    </div>
+                    <h5 class="mb-0">Online Tracking</h5>
+                  </div>
+                  <span>Intregated Software for data handling</span>
+                </div>
+                <div class="col-sm-6 " data-aos="fade-in" data-aos-delay="0.3">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="flex-shrink-0 btn-square check-box-cus me-3">
+                      <i class="fa fa-check text-white"></i>
+                    </div>
+                    <h5 class="mb-0">Afordable Fee</h5>
+                  </div>
+                  <span>Our fee structure is designed as per the needs and requirements of our clients</span>
+                </div>
+                <div class="col-sm-6" data-aos="fade-in" data-aos-delay="0.4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="flex-shrink-0 btn-square check-box-cus me-3">
+                      <i class="fa fa-check text-white"></i>
+                    </div>
+                    <h5 class="mb-0">Best Trainers</h5>
+                  </div>
+                  <span>Model a strong work ethic and cover the basic requirements of your job.</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="0.5">
+              <div class="position-relative overflow-hidden pe-5 pt-5 h-100" style="min-height: 400px;">
+                <img class="position-absolute w-100 h-100" src="assets/tree.jpg" alt="" style="object-fit: cover;">
+                <img class="position-absolute top-0 end-0 bg-white ps-3 pb-3" src="assets/tree2.jpg" alt=""
+                  style="width: 200px; height: 200px">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-
-  </div>
-
+    <!-- Features End -->
 
 
 
@@ -218,177 +560,308 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-  <!-- About us  -->
-  <div class="about-us-1"
-    style="display: flex;flex-direction: column;justify-content: space-around;align-items: center;">
-    <h1>Meet Our Team</h1>
-    <h3>We are all very different. We were born in different cities, at different times, we love different music, food,
-      movies. But we have something that unites us all. It is our company. We are its heart. We are not just a team, we
-      are a family.</h3>
-    <button type="button" class="btn btn-outline-dark btn-lg">Contact Us</button>
-   
-    <div class="about-us-pic" style=""></div>
-  </div>
-
-
-
-
-  <!-- Contact us  -->
-  <div class="container contact-us-container">
-    <div style="justify-content: center;align-items: center; display: flex; flex-direction: column;">
-      <h1 class="about-us" id="about-us">Contact us</h1>
-      <div style="width: 100px; height: 3px; background-color: red; margin-right: 175px"></div>
-    </div>
-    <div style="height: 50px;"></div>
-    <iframe width="100%" height="1250px"
+    <!-- Contact us  -->
+    <div class="container contact-us-container" id="scrollContactUs" style="padding: top 10px;">
+      <div style="justify-content: center;align-items: center; display: flex; flex-direction: column;">
+        <h1 class="about-us" id="about-us">Contact us</h1>
+        <div style="width: 100px; height: 3px; background-color: red; margin-right: 175px"></div>
+      </div>
+      <div style="height: 50px;"></div>
+      <!-- <iframe width="100%" height="1250px"
       src="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAARtInhhURTBTNjRORTFBSVJTWDBJWVhDOTUyR0RCWi4u&embed=true"
       frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:1250px"
-      allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+      allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe> -->
+
+      <div
+        style="display: flex;flex-direction: row;justify-content: space-around; flex-wrap: wrap;padding:20px 20px 10px 20px;">
+
+        
+        <div class="container-xxl py-6" style="padding-bottom:5vh;">
+          <div class="container">
+            <div class="row g-5">
+              <div class="col-lg-6" data-aos="fade-up"  data-aos-delay="0.1" style="min-height: 450px;">
+                <div class="position-relative h-100">
+                  <iframe class="position-relative w-100 h-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                    frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+                </div>
+              </div>
+              <div class="col-lg-6" data-aos="fade-in"  data-aos-delay="0.5">
+                <h6 class="text-uppercase mb-2 fw-bold" style="color:red;">Contact Us</h6>
+                <h1 class="display-6 mb-4 fw-bold" style="color:#0d9089">If You Have Any Query, Please Contact Us</h1>
+                <div style="padding-bottom: 5%;">
+                  <h5 class="clients-connect" style="color: crimson;">Our Client Partner</h5>
+                  <h6><i class="fa fa-user-circle-o" aria-hidden="true"></i> Joy</h6>
+                    <h6><i class="fa fa-phone " aria-hidden="true"></i> +91 7003073039 </h6>
+                      <h6><i class="fa fa-address-book-o" aria-hidden="true"></i> xxxxyyyy@gmail.com</h2>
+                </div>
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control border-0 bg-light" id="name" placeholder="Your Name">
+                        <label for="name">Your Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="email" class="form-control border-0 bg-light" id="email" placeholder="Your Email">
+                        <label for="email">Your Email</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <input type="text" class="form-control border-0 bg-light" id="subject" placeholder="Subject">
+                        <label for="subject">Subject</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating">
+                        <textarea class="form-control border-0 bg-light" placeholder="Leave a message here" id="message"
+                          style="height: 150px"></textarea>
+                        <label for="message">Message</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-outline-danger py-3 px-5" onclick="alert('Message is send to an executive ! will be rigt back')">Send Message</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End  -->
+
+    <!-- Clients -->
+    <div style="background-color: white;">
+      <div style="justify-content: center;align-items: center; display: flex; flex-direction: column;">
+        <h1 class="about-us" id="about-us">Our Clients</h1>
+        <div style="width: 100px; height: 3px; background-color: red; margin-right: 175px"></div>
+      </div>
+
+      <div class="owl-carousel owl-theme" style="margin-top: 3vh;padding-bottom: 3vh;">
+        <div class="item"><img src="assets/rapido.png" class="cl-item"></div>
+        <div class="item"><img src="assets/firstcry.png" class="cl-item"></div>
+        <div class="item"><img src="assets/aditya.jpg" class="cl-item"></div>
+        <div class="item"><img src="assets/oyo.jpg" class="cl-item"></div>
+        <div class="item"><img src="assets/dishtv.png" class="cl-item"></div>
+      </div>
+
+    </div>
+    <!-- end of clients -->
+
+
+
   </div>
 
 
 
-  <section>Footer Example 4</section>
-  <footer class="footer-distributed">
+
+  <!-- Footer -->
+  <!-- <section style="color:wheat;">Here is the end untill we catch up again</section> -->
+  <footer class="footer-distributed"
+    style="display: flex;flex-direction: row;justify-content: space-between;flex-wrap: wrap;">
 
     <div class="footer-left">
-
-      <h3>Company<span>logo</span></h3>
-
+      <h3>Staffing Buzz<img src="assets/final-logo-only (3).svg"
+          style="fill:whitesmoke;height: 200px;display: relative;padding-top:5px ;bottom: -10px;"></span></h3>
       <p class="footer-links">
         <a href="#" class="link-1">Home</a>
-
-        <a href="#">Blog</a>
-
-        <a href="#">Pricing</a>
-
-        <a href="#">About</a>
-
-        <a href="#">Faq</a>
-
-        <a href="#">Contact</a>
+        <a onclick="scroll_to('scrollServices')">Services</a>
+        <a onclick="scroll_to('scrollAbout')">About</a>
+        <a onclick="scroll_to('scrollfaq')" >Faq</a>
+        <a onclick="scroll_to('scrollContactUs')">Contact</a>
       </p>
-
-      <p class="footer-company-name">Company Name © 2015</p>
+      <p class="footer-company-name">Staffing Buzz © 2022</p>
     </div>
 
     <div class="footer-center">
-
       <div>
         <i class="fa fa-map-marker"></i>
-        <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+        <p style="word-wrap: wrap;"><span>C/O HASI DUTTA,</span> SOUTH STATION ROAD AGARPARA, <br>
+          P.S.-BELGHARIA KOLKATA, North 24 PGS 743177</p>
       </div>
-
       <div>
         <i class="fa fa-phone"></i>
-        <p>+1.555.555.5555</p>
+        <p>+91 91233 13202</p>
       </div>
-
-      <div>
-        <i class="fa fa-envelope"></i>
-        <p><a href="mailto:support@company.com">support@company.com</a></p>
+      <div class="footer-icons">
+        <span style="color:whitesmoke;">Follow us on</span><br><br>
+        <a href="#"><i class="fa fa-facebook" style="margin:0% !important"></i></a>
+        <a href="#"><i class="fa fa-twitter" style="margin:0% !important"></i></a>
+        <a href="#"><i class="fa fa-linkedin" style="margin:0% !important"></i></a>
+        <a href="#"><i class="fa fa-github" style="margin:0% !important"></i></a>
       </div>
 
     </div>
 
     <div class="footer-right">
-
       <p class="footer-company-about">
         <span>About the company</span>
-        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
-        vehicula sit amet.
+        STAFFING BUZZ PRIVATE LIMITED is a Private Company, who was incorporated 0 Year(s) 5 Month(s) 14 Day(s) ago on
+        dated 30-Dec-2021 . STAFFING BUZZ PRIVATE LIMITED is classified as Non-govt company and is registered at
+        Registrar of Companies located in RoC-Kolkata.
       </p>
-
-      <div class="footer-icons">
-
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-github"></i></a>
-
+      <div>
+        <h6 class="fw-bold P-4" style="color:whitesmoke;">Newsletter</h6>
+        <div class="input-group mb-3" max-width="15vw">
+          <input type="text" class="form-control" placeholder="Your Email Address" aria-label="Your Email Address"
+            aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">Sign Up</span>
+          </div>
+        </div>
       </div>
-
+      <div>
+        <p class="footer-company-name">Designed by : <a>ATK Studio Designs</a></p>
+      </div>
     </div>
 
   </footer>
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ End Of HTML Elements ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 150,
+      duration: 1750,
+    }); 
+  </script>
+
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.5/jquery.bxslider.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.3/jquery.scrollTo.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+
+    var x = 2.2;
+    var f = 0;
+    jQuery(window).on('scroll', function () {
+      if (jQuery(window).scrollTop() > 200) {
+        jQuery('#header_frame').css('background-color', '#FFFFFF');
+        jQuery('#xy').css('color', 'black');
+        jQuery('#xy1').css('color', 'black');
+        jQuery('#xy2').css('color', 'black');
+        jQuery('#xy3').css('color', 'black');
+        jQuery('#xy4').css('color', 'black');
+        jQuery('#mob-nav').css('fill', 'black');
+        jQuery('#navbar-toggler').css('color', 'black');
+        jQuery('#brand').css({
+          'background-color': '#ca0630',
+          'background-image': 'linear-gradient(90deg, #d12e2f, #3c839c)',
+          'background-size': '100%',
+          '-webkit-background-clip': 'text',
+          '-moz-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent;',
+          '-moz-text-fill-color': 'transparent',
+          'color': '',
+          'font': 'size 1.5em',
+          'font-weight': '700',
+          'text-decoration': 'none !important',
+          'font-size': 'xx-large',
+        });
+        jQuery('#brand-img').css('display', 'block');
+        $('#header_frame').addClass('shadow-sm mb-5 bg-white rounded');
+        x = 1;
+
+      } else {
+        jQuery('#header_frame').css('background-color', '');
+        jQuery('#xy').css('color', 'whitesmoke');
+        jQuery('#xy1').css('color', 'whitesmoke');
+        jQuery('#xy2').css('color', 'whitesmoke');
+        jQuery('#xy3').css('color', 'whitesmoke');
+        jQuery('#xy4').css('color', 'whitesmoke');
+        jQuery('#mob-nav').css('fill', '#ffc107');
+        jQuery('#navbar-toggler').css('color', '#ffc107');
+        jQuery('#brand').css({
+          'background-color': '#ffc107',
+          'background-image': 'linear-gradient(0deg, #ffc107, #ffc107)',
+          'background-size': '100%',
+          '-webkit-background-clip': 'text',
+          '-moz-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent;',
+          '-moz-text-fill-color': 'transparent',
+          'font': 'size 1.5em',
+          'font-weight': '700',
+          'text-decoration': 'none !important',
+          'font-size': 'xx-large',
+        });
+        jQuery('#brand-img').css('display', 'none');
+        $('#header_frame').removeClass('shadow-sm mb-5 bg-white');
+        x = 2.2;
+      }
+    });
+
+
+    document.onreadystatechange = function () {
+      var state = document.readyState
+      if (state == 'interactive') {
+        try {
+          document.getElementById('contents').style.visibility = "hidden";
+        }
+        catch (err) {
+          console.log(err);
+        }
+      } else if (state == 'complete') {
+        setTimeout(function () {
+          try {
+            document.getElementById('interactive');
+            document.getElementById('load').style.visibility = "hidden";
+            document.getElementById('contents').style.visibility = "visible";
+          }
+          catch (err) {
+            console.log(err);
+          }
+        }, 2000);
+      }
+    }
+
+
+
+    function scroll_to(s) {
+      console.log(s);
+      $('body').scrollTo('#' + s, 1, { offset: -($("#brand").height() + 20) * x });
+    }
+
+
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 3
+        },
+        1000: {
+          items: 5
+        }
+      }
+    })
+
+
+  // clients slider
+  // $('.carousel-client').bxSlider({
+  //   auto: true,
+  //   slideWidth: 234,
+  //   minSlides: 2,
+  //   maxSlides: 5,
+  //   controls: false
+  // });
+  </script>
 </body>
-<script>
-  var f = 0;
-  jQuery(window).on('scroll', function () {
-    if (jQuery(window).scrollTop() > 200) {
-      jQuery('#header_frame').css('background-color', '#FFFFFF');
-      jQuery('#xy').css('color', 'black');
-      jQuery('#xy1').css('color', 'black');
-      jQuery('#xy2').css('color', 'black');
-      jQuery('#xy3').css('color', 'black');
-      jQuery('#xy4').css('color', 'black');
-      jQuery('#brand').css({
-        'background-color': '#ca0630',
-        'background-image': 'linear-gradient(90deg, #d12e2f, #3c839c)',
-        'background-size': '100%',
-        '-webkit-background-clip': 'text',
-        '-moz-background-clip': 'text',
-        '-webkit-text-fill-color': 'transparent;',
-        '-moz-text-fill-color': 'transparent',
-        'color': '',
-        'font': 'size 1.5em',
-        'font-weight': '700',
-        'text-decoration': 'none !important',
-        'font-size': 'xx-large',
-      });
-      jQuery('#brand-img').css('display', 'block');
-      $('#header_frame').addClass('shadow-sm mb-5 bg-white rounded');
-      // -webkit-linear-gradient(#CA0630, #CA0630)
-    } else {
-      jQuery('#header_frame').css('background-color', '');
-      jQuery('#xy').css('color', 'whitesmoke');
-      jQuery('#xy1').css('color', 'whitesmoke');
-      jQuery('#xy2').css('color', 'whitesmoke');
-      jQuery('#xy3').css('color', 'whitesmoke');
-      jQuery('#xy4').css('color', 'whitesmoke');
-      jQuery('#brand').css({
-        'background-color': '#ffc107',
-        'background-image': 'linear-gradient(0deg, #ffc107, #ffc107)',
-        'background-size': '100%',
-        '-webkit-background-clip': 'text',
-        '-moz-background-clip': 'text',
-        '-webkit-text-fill-color': 'transparent;',
-        '-moz-text-fill-color': 'transparent',
-        'font': 'size 1.5em',
-        'font-weight': '700',
-        'text-decoration': 'none !important',
-        'font-size': 'xx-large',
-      });
-      jQuery('#brand-img').css('display', 'none');
-      $('#header_frame').removeClass('shadow-sm mb-5 bg-white');
-    }
-  });
-
-
-  document.onreadystatechange = function () {
-    var state = document.readyState
-    if (state == 'interactive') {
-      document.getElementById('contents').style.visibility = "hidden";
-    } else if (state == 'complete') {
-      setTimeout(function () {
-        document.getElementById('interactive');
-        document.getElementById('load').style.visibility = "hidden";
-        document.getElementById('contents').style.visibility = "visible";
-      }, 2000);
-    }
-  }
-</script>
 
 </html>
