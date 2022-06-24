@@ -23,14 +23,11 @@
 </head>
 
 <body>
-  <div id="load" style="display:flex;align-items: center;justify-content: space-around;">
-    <!-- <div class="spinner-border text-primary" style="display: 50%; height: ;" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div> -->
+  <!-- loader  -->
+  <!-- <div id="load" style="display:flex;align-items: center;justify-content: space-around;">
     <img src="assets/R.gif" alt="">
-  </div>
-
-  <!-- loader -->
+  </div> -->
+  <!-- loader End -->
 
 
 
@@ -803,29 +800,29 @@
       }
     });
 
-
-    document.onreadystatechange = function () {
-      var state = document.readyState
-      if (state == 'interactive') {
-        try {
-          document.getElementById('contents').style.visibility = "hidden";
-        }
-        catch (err) {
-          console.log(err);
-        }
-      } else if (state == 'complete') {
-        setTimeout(function () {
-          try {
-            document.getElementById('interactive');
-            document.getElementById('load').style.visibility = "hidden";
-            document.getElementById('contents').style.visibility = "visible";
-          }
-          catch (err) {
-            console.log(err);
-          }
-        }, 100);
-      }
-    }
+// Loader -------------- code --------------------------
+    // document.onreadystatechange = function () {
+    //   var state = document.readyState
+    //   if (state == 'interactive') {
+    //     try {
+    //       document.getElementById('contents').style.visibility = "hidden";
+    //     }
+    //     catch (err) {
+    //       console.log(err);
+    //     }
+    //   } else if (state == 'complete') {
+    //     setTimeout(function () {
+    //       try {
+    //         document.getElementById('interactive');
+    //         document.getElementById('load').style.visibility = "hidden";
+    //         document.getElementById('contents').style.visibility = "visible";
+    //       }
+    //       catch (err) {
+    //         console.log(err);
+    //       }
+    //     }, 100);
+    //   }
+    // }
 
 
 
@@ -853,14 +850,6 @@
     })
 
 
-  // clients slider
-  // $('.carousel-client').bxSlider({
-  //   auto: true,
-  //   slideWidth: 234,
-  //   minSlides: 2,
-  //   maxSlides: 5,
-  //   controls: false
-  // });
   </script>
 </body>
 
