@@ -24,18 +24,19 @@
 
 <body>
   <!-- Navbar -->
-  <header id="header_frame">
+  <!-- glass_header -->
+  <header class="" id="header_frame" style="background-color:white;">
 
     <span><img id="brand-img" src="assets/final-logo-only-1.png" height="70px" padding="2px">
       <h1 hrefg="#" id="brand" class="brand"> Staffing Buzz</h1>
     </span>
     <div class="navigation">
       <nav class="navigation-items" id="navbar-example2">
-        <a href="#" id="xy" class="titles xy">Home</a>
-        <a onclick="scroll_to('scrollServices')" id="xy1" class="titles xy1">Services</a>
-        <a href="#scrollContactUs" id="xy2" class="titles xy2">Career</a>
-        <a onclick="scroll_to('scrollAbout')" id="xy3" class="titles xy3">About</a>
-        <a id="xy4" class="titles xy4" onclick="scroll_to('scrollContactUs')">Contact Us</a>
+        <a href="index.html" id="xy" class="titles xy">Home</a>
+        <a href="index.html#/scrollServices" id="xy1" class="titles xy1">Services</a>
+        <a href="#" id="xy2" class="titles xy2">Jobs</a>
+        <a href="index.html#/scrollAbout" id="xy3" class="titles xy3">About</a>
+        <a href="index.html#/scrollContactUs" id="xy4" class="titles xy4">Contact Us</a>
       </nav>
 
       <!-- Mobile navifation -->
@@ -55,11 +56,11 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body mob-nav-items" data-bs-dismiss="offcanvas" aria-label="Close">
-            <a href="#" class="titles">Home</a><br>
-            <a onclick="scroll_to('scrollServices')" class="titles">Services</a><br>
-            <a href="#scrollContactUs" class="titles">Career</a><br>
-            <a onclick="scroll_to('scrollAbout')" class="titles">About</a><br>
-            <a onclick="scroll_to('scrollContactUs')" class="titles">Contact Us</a><br>
+            <a href="index.html" class="titles">Home</a><br>
+            <a href="index.html#/scrollServices" class="titles">Services</a><br>
+            <a href="#" class="titles">Jobs</a><br>
+            <a href="index.html#/scrollAbout" class="titles">About</a><br>
+            <a href="index.html#/scrollContactUs" class="titles">Contact Us</a><br>
           </div>
         </div>
       </div>
@@ -69,20 +70,175 @@
 
 
   <div>
-    <div style="height:25vh;"></div>
-
-    <!-- Form -->
-    <div class="container bd-example ps-lg-4">
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-      </div>
+    <div class="first-banner" style="height:35vh;">
+      <h1 class="display-2" style="padding-top:20vh; color: black; text-align: center;">We are hiring- apply fast !!</h1>
     </div>
 
+    <!-- Form -->
+    <div class="container" style="background-color:none;">
+      <h6 class=" fw-bold" style="color: red!important;">We are hiring - Freshers apply fast</h6>
+      <h3 style="color:#0d9089;letter-spacing:2px;">Your Personal Details</h3>
+      <form class="row g-3">
+
+        <!-- First name -->
+        <div class="col-md-4">
+          <label for="validationServer01" class="form-label">First name</label>
+          <input type="text" class="form-control is-valid" id="validationServer01" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+        <!-- Last name -->
+        <div class="col-md-4">
+          <label for="validationServer02" class="form-label">Last name</label>
+          <input type="text" class="form-control is-valid" id="validationServer02" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+        <!-- Phone No -->
+        <div class="col-md-4">
+          <label for="validationServerUsername" class="form-label">Phone no</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend3">+91 </span>
+            <input type="text" class="form-control is-invalid" id="validationServerUsername"
+              aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+
+        <!-- Fathers name -->
+        <div class="col-md-4">
+          <label for="validationServer02" class="form-label">Fathers Name</label>
+          <input type="text" class="form-control is-valid" id="validationServer02" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+        <!-- Date of  Birth-->
+        <div class="col-md-4">
+          <label for="validationServer02" class="form-label">Date of Birth</label>
+          <input type="text" class="form-control is-valid" id="validationServer02" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+        <!-- Email id -->
+        <div class="col-md-4">
+          <label for="validationServer02" class="form-label">Email Id</label>
+          <input type="text" class="form-control is-valid" id="validationServer02" value="" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+
+        <!-- Address -->
+        <hr>
+        <h3>Current address</h3>
+
+        <!-- Flat no -->
+        <div class="col-md-6">
+          <label for="validationServer03" class="form-label">House/Flat No, Street name</label>
+          <input type="text" class="form-control is-invalid" id="validationServer03"
+            aria-describedby="validationServer03Feedback" required>
+          <div id="validationServer03Feedback" class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+
+        
+
+        <!-- City -->
+        <div class="col-md-3">
+          <label for="validationServer03" class="form-label">City</label>
+          <input type="text" class="form-control is-invalid" id="validationServer03"
+            aria-describedby="validationServer03Feedback" required>
+          <div id="validationServer03Feedback" class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+
+        <!-- zip code -->
+        <div class="col-md-3">
+          <label for="validationServer05" class="form-label">Pin code</label>
+          <input type="text" class="form-control is-invalid" id="validationServer05"
+            aria-describedby="validationServer05Feedback" required>
+          <div id="validationServer05Feedback" class="invalid-feedback">
+            Please provide a valid pin code.
+          </div>
+        </div>
+
+
+        <!--Land Mark-->
+        <div class="col-md-6">
+          <label for="validationServer03" class="form-label">Nearest land mark</label>
+          <input type="text" class="form-control is-invalid" id="validationServer03"
+            aria-describedby="validationServer03Feedback" required>
+          <div id="validationServer03Feedback" class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+
+        <!--Distict-->
+        <div class="col-md-3">
+          <label for="validationServer03" class="form-label">District</label>
+          <input type="text" class="form-control is-invalid" id="validationServer03"
+            aria-describedby="validationServer03Feedback" required>
+          <div id="validationServer03Feedback" class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label for="validationServer04" class="form-label">State</label>
+          <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback"
+            required>
+            <option selected disabled value="">Choose...</option>
+            <option>...</option>
+          </select>
+          <div id="validationServer04Feedback" class="invalid-feedback">
+            Please select a valid state.
+          </div>
+        </div>
+
+        <!-- Accademic details -->
+        <hr>
+        <h3>Accademic details</h3>
+
+        <!-- Highest qualification -->
+        <div class="col-md-12">
+          <label for="validationServer03" class="form-label">Highest qualification</label>
+          <input type="text" class="form-control is-invalid" id="validationServer03"
+            aria-describedby="validationServer03Feedback" required>
+          <div id="validationServer03Feedback" class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+
+
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3"
+              aria-describedby="invalidCheck3Feedback" required>
+            <label class="form-check-label" for="invalidCheck3">
+              Agree to terms and conditions
+            </label>
+            <div id="invalidCheck3Feedback" class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
     <!-- Clients -->
     <div style="background-color: white;">
       <div style="justify-content: center;align-items: center; display: flex; flex-direction: column;">
@@ -121,11 +277,11 @@
       <h3>Staffing Buzz<img src="assets/final-logo-only (3).svg"
           style="fill:whitesmoke;height: 200px;display: relative;padding-top:5px ;bottom: -10px;"></span></h3>
       <p class="footer-links">
-        <a href="#" class="link-1">Home</a>
-        <a onclick="scroll_to('scrollServices')">Services</a>
-        <a onclick="scroll_to('scrollAbout')">About</a>
+        <a href="index.html" class="link-1">Home</a>
+        <a href="index.html#/scrollServices">Services</a>
+        <a href="index.html#/scrollAbout">About</a>
         <a onclick="scroll_to('scrollfaq')">Faq</a>
-        <a onclick="scroll_to('scrollContactUs')">Contact</a>
+        <a href="index.html#/scrollContactUs">Contact</a>
       </p>
       <p class="footer-company-name">Staffing Buzz © 2022</p>
     </div>
@@ -133,7 +289,7 @@
     <div class="footer-center">
       <div>
         <i class="fa fa-map-marker"></i>
-        <p style="word-wrap: wrap;"><span>C/O HASI DUTTA,</span> SOUTH STATION ROAD AGARPARA, <br>
+        <p style="word-wrap: wrap;">SOUTH STATION ROAD AGARPARA, <br>
           P.S.-BELGHARIA KOLKATA, North 24 PGS 743177</p>
       </div>
       <div>
@@ -169,7 +325,7 @@
       </div>
       <div>
         <p class="footer-company-name">Designed by : <a>Pastel Labz </a></p>
-        <p class="footer-company-name">Images powered by : <a href="https://unsplash.com">unsplash </a></p>
+        <p class="footer-company-name">Images powered by : <a>Unsplash, Pexel, Themefores</a></p>
       </div>
     </div>
 
@@ -207,8 +363,8 @@
       loop: true,
       margin: 10,
       nav: true,
-      autoplay:true,
-      autoplayTimeout:1000,
+      autoplay: true,
+      autoplayTimeout: 1000,
       responsive: {
         0: {
           items: 1

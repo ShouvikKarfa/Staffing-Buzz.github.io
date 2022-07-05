@@ -1,6 +1,6 @@
-body{
+/* body{
     background-color: rgb(241, 241, 241) !important;  
-}
+} */
 
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 1150px) {
@@ -44,6 +44,17 @@ box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
     header{
         padding:15px 150px;
     }
+}
+
+.mob-nav-items a{
+  position: relative;
+  color:black;
+  font: size 1.5em;
+  font-weight:700;
+  text-decoration: none;
+  font-size: x-large;
+  transition: 0.3s ease;
+  margin:0px 10px 0px 10px; 
 }
 
 .navigation-items a{
@@ -91,6 +102,9 @@ box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
     font-size: xx-large;
 }
 
+
+
+
 @media screen and (max-width: 550px) {
      
     .brand{
@@ -126,12 +140,25 @@ box-shadow: 0px 0px 9px 3px rgba(41,41,41,.25);
       }
 
     }
+.glass_header{
+    backdrop-filter: blur(21px) saturate(176%);
+    -webkit-backdrop-filter: blur(21px) saturate(176%);
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
 
 
-
-
-
-
+    .first-banner{
+      /* background-image: url("https://source.unsplash.com/1980x600/?sunsetsky"); */
+      background-image: url("assets/xyz.jpg");
+      /* position: relative; */
+      /* opacity: 0.65; */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
 
 
